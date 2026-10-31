@@ -1,0 +1,11 @@
+# Tidy Tails on Netlify. Nitro writes the site to dist/ and the
+# server function to .netlify/functions-internal.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Auth stays off. An unset flag is treated as on, which would
+  # block the game for every visitor.
+  VITE_AUTH_ENABLED = "false"

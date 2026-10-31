@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff6ea;
+  --color-ink: #2b241c;
+  --color-apricot: #f4a261;
+  --color-coral: #e76f51;
+  --color-mint: #1f8a7a;
+  --color-butter: #ffe08a;
+  --color-sky: #3aa0c8;
+  --color-paper: #fffaf3;
+  --font-display: "Fredoka", "Avenir Next", "Trebuchet MS", sans-serif;
+  --font-sans: "Nunito", "Avenir Next", "Trebuchet MS", sans-serif;
+  --radius: 1rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+}
+
+.safe-b {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.safe-t {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 900px) {
+  .touch-dock {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop-in {
+    animation: none !important;
+  }
+}
